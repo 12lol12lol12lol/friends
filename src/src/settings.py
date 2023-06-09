@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y^ntu+wv(skr1cpldil)qdw-(h777yd2@^b&la=snt0z=ay$4h
 
 ALLOWED_HOSTS = ['*']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False) or False
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
@@ -116,6 +116,14 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST') or sys.exit('env DB_HOST is not isntalled'),
         'PORT': os.getenv('DB_PORT') or sys.exit('env DB_PORT is not isntalled'),
     }
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Friends service API',
+    'DESCRIPTION': 'АПИ сервиса друзей',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': True,
 }
 
 

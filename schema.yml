@@ -1,7 +1,8 @@
 openapi: 3.0.3
 info:
-  title: ''
-  version: 0.0.0
+  title: Friends service API
+  version: 1.0.0
+  description: АПИ сервиса друзей
 paths:
   /api/schema/:
     get:
@@ -396,9 +397,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Bad arguments'
           description: ''
-  /users/friend_list/:
+  /users/friends/:
     get:
-      operationId: users_friend_list_list
+      operationId: users_friends_list
       description: View for get friends list
       parameters:
       - name: limit

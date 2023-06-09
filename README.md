@@ -46,6 +46,8 @@ docker-compose exec web ./manage.py test
 
 OpenApi спецификация автоматически генерируется и находится в файле schema.yaml
 
+Также документацию можно посмотреть [здесь](http://localhost:8000/api/schema/redoc/) или [здесь](http://localhost:8000/api/schema/swagger-ui/)
+
 1. **Регистрация**
 ```shell
 curl --location 'http://localhost:8000/users/sign_up' \
