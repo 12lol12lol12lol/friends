@@ -1,6 +1,7 @@
 from typing import Any, Dict
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from user.constants import FriendshipStatus
+from user.models import User
 from django.contrib.auth.password_validation import validate_password
 
 
@@ -27,3 +28,12 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             username=attrs['username'],
             password=attrs['password']
         )
+
+class FriendSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username')
+
+class FriendShipStatusSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    status = serializers.ChoiceField(choices=FriendshipStatus.choices)
