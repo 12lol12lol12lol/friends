@@ -1,0 +1,11 @@
+ALREADY_APPROVED_MESSAGE = 'Request already approved'
+WRONG_REQUEST_STATUS_MESSAGE = 'You can approve only new request'
+SUCCESS_APPROVED_MESSAGE = 'Request successfully approved'
+DECLINED_MESSAGE = 'The user did not accept the request early or deleted from friends'
+AUTO_APPROVED_MESSAGE = 'Request create automatically, mutual requests'
+NEW_REQUEST_CREATED_MESSAGE = 'New request created'
+ALREADY_FRIENDS_MESSAGE = 'You are already friends'
+REQUEST_AUTO_APPROVED_MESSAGE = 'Request auto approved, mutual requests'
+REQUEST_TO_YOURSELF_MESSAGE = "You can't send request to yourself"
+REQUEST_DECLINED_MESSAGE = 'Request declined'
+ALREADY_SENT_MESSAGE = 'The request has already been sent'
