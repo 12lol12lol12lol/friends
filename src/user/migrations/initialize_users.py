@@ -2,9 +2,8 @@ from django.db import migrations
 
 
 def create_default_users(apps, schema_editor):
-    """Create a new superuser """
+    """Create test users """
     from django.contrib.auth import get_user_model
-    from django.conf import settings
 
     Model = apps.get_model('user', 'User')
     Model.objects.create_user(
