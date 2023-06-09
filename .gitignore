@@ -3,3 +3,5 @@
 .vscode
 .env
 *.ipynb
+src/static/*
+.DS_Store
