@@ -82,8 +82,26 @@ curl --location 'http://localhost:8000/token/' \
   "access": "someAccessToken"
 }
 ```
+3. **Запрос в друзья**
+```shell
+curl --location 'http://localhost:8000/requests/' \
+--header 'Authorization: Bearer <InsertToken>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "to_user": 2
+}'
+```
+Ответ:
+```json
+{
+  "id":2,
+  "from_user":3,
+  "to_user":2,
+  "status":"new"
+}
+```
 
-3. **Получить список друзей**
+4. **Получить список друзей**
 ```shell
 curl --location 'http://localhost:8000/users/friends/' \
 --header 'Authorization: Bearer <InsertToken>'
@@ -104,5 +122,20 @@ curl --location 'http://localhost:8000/users/friends/' \
         "username": "friendName3"
       }
   ]
+}
+```
+
+5. **Принять запрос дружбы**
+```shell
+curl --location --request POST 'http://localhost:8000/requests/1/approve/' \
+--header 'Authorization: Bearer <InsertToken>'
+```
+Ответ:
+```json
+{
+    "id": 1,
+    "from_user": 1,
+    "to_user": 2,
+    "status": "approved"
 }
 ```
