@@ -50,19 +50,19 @@ OpenApi спецификация автоматически генерирует
 
 1. **Регистрация**
 ```shell
-curl --location 'http://localhost:8000/users/sign_up' \
+curl --location 'http://localhost:8000/users/sign_up/' \
 --header 'Content-Type: application/json' \
 --data '{
-    "username":"test",
-    "password":"pass",
-    "password2":"pass"
+    "username":"test_user",
+    "password":"testpassword1",
+    "password2":"testpassword1"
 }'
 ```
 Ответ:
 ```json
 {
-  "id": 1,
-  "username": "test"
+  "id": 3,
+  "username": "test_user"
 }
 ```
 
@@ -71,8 +71,8 @@ curl --location 'http://localhost:8000/users/sign_up' \
 curl --location 'http://localhost:8000/token/' \
 --header 'Content-Type: application/json' \
 --data '{
-    "username":"test",
-    "password":"pass"
+    "username":"test_user",
+    "password":"testpassword1"
 }'
 ```
 Ответ:
@@ -85,7 +85,7 @@ curl --location 'http://localhost:8000/token/' \
 
 3. **Получить список друзей**
 ```shell
-curl --location 'http://localhost:8000//users/friends/' \
+curl --location 'http://localhost:8000/users/friends/' \
 --header 'Authorization: Bearer <InsertToken>'
 ```
 Ответ:
